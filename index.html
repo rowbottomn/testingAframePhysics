@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+      <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v3.3.0/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css"
+  </head>
+  <body onload="">
+    
+    <a-scene physics = "debug:true">
+
+      <a-entity camera  id = "camera"
+
+        universal-controls
+        look-controls
+        
+        position = "0 2.6 0" >
+        <a-box id = "player" scale = "1 1.6 1" dynamic-body visible = "false"></a-box>
+        <a-entity cursor="fuse: true; fuseTimeout: 500"  cursor-listener  raycaster="objects: [data-raycastable]"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.09"
+            material="color: #33AABB; shader: flat; transparent : true; opacity:0.5">
+        </a-entity>  
+      </a-entity>
+
+      <a-grid static-body> </a-grid>
+
+      <a-sphere position = "0 4 -4" color = "blue" dynamic-body></a-sphere>
+      <a-sphere position = "0 9 -4" color = "blue" dynamic-body></a-sphere>
+
+      <a-sphere position = "0 11 -4" color = "blue" dynamic-body></a-sphere>
+
+      <a-sphere position = "2 4 -4" color = "blue" dynamic-body></a-sphere>
+      <a-sphere position = "0 4 4" color = "blue" dynamic-body></a-sphere>
+
+      <a-sphere position = "10 4 -4" color = "blue" dynamic-body></a-sphere>
+
+      <a-sphere position = "10 4 -4" color = "blue" dynamic-body></a-sphere>
+
+      <a-sphere position = "0 4 -4" color = "blue" dynamic-body></a-sphere>
+      <a-sphere position = "0 9 -4" dynamic-body  src = "gradient.jpg"  ></a-sphere>
+
+      <a-sphere position = "0 11 -4" color = "blue" dynamic-body></a-sphere>
+
+      <a-box position = "12 4 -4" color = "blue" dynamic-body></a-box>
+      <a-box position = "10 4 4" color = "blue" dynamic-body></a-box>
+
+      <a-box position = "-15 4 -4" color = "blue" dynamic-body ></a-box>
+
+      <a-box data-raycastable position = "-15 4 -4" src = "wood_texture.jpg"  dynamic-body = "shape: auto; mass: 0.0001"></a-box>
+    </a-scene>
+    <script src="script.js"></script>
+  </body>
+</html>
